@@ -7,9 +7,11 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
+	<script defer src="https://kit.fontawesome.com/e8453806b2.js" crossorigin="anonymous"></script>
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 	<script src="./assets/script.js" defer></script>
+	<script src="./assets/modale.js" defer></script>
 </head>
 <body>
 <header>
@@ -18,7 +20,7 @@
 		<ul>
 			<li>projets</li>
 			<li>contact</li>
-			<li>login</li>
+			<li><a href="/FrontEnd/login.html">login</a></li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
@@ -35,53 +37,40 @@
 			<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG, décorateur(trice)</p>
 		</article>
 	</section>
+	<!-- modale  -->
+    <div id="myModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<p>Galerie photo</p>
+			<div class="gallery"></div>
+			<form id="ajout_photo" enctype="multipart/form-data" method="POST">
+				<!-- intégrer fleche retour -->
+				<button id="laflecheretour"><i class="fas fa-arrow-left"></i> Retour</button>
+				<label>Ajout photo</label>
+				<input type="file" name="image" id="photoInput">
+				
+				<label>Titre</label>
+				<input type="text" name="title">
+				<label>Catégorie</label>
+				<input type="text" name="category">
+				<button id="validerButton" type="submit">Valider</button>
+			</form>
+			<button id="ajoutPhoto">Ajouter Photo</button>
+		</div>
+	</div>
+	
+	
+	
+
+
 	<section id="portfolio">
 		<h2>Mes Projets</h2>
+			<div class="filters">
+				
+			</div>
+		</div>
 		<div class="gallery">
-			<figure>
-				<img src="assets/images/abajour-tahina.png" alt="Abajour Tahina">
-				<figcaption>Abajour Tahina</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-v.png" alt="Appartement Paris V">
-				<figcaption>Appartement Paris V</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/restaurant-sushisen-londres.png" alt="Restaurant Sushisen - Londres">
-				<figcaption>Restaurant Sushisen - Londres</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/la-balisiere.png" alt="Villa “La Balisiere” - Port Louis">
-				<figcaption>Villa “La Balisiere” - Port Louis</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/structures-thermopolis.png" alt="Structures Thermopolis">
-				<figcaption>Structures Thermopolis</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-x.png" alt="Appartement Paris X">
-				<figcaption>Appartement Paris X</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/le-coteau-cassis.png" alt="Pavillon “Le coteau” - Cassis">
-				<figcaption>Pavillon “Le coteau” - Cassis</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/villa-ferneze.png" alt="Villa Ferneze - Isola d’Elba">
-				<figcaption>Villa Ferneze - Isola d’Elba</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-xviii.png" alt="Appartement Paris XVIII">
-				<figcaption>Appartement Paris XVIII</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/bar-lullaby-paris.png" alt="Bar “Lullaby” - Paris">
-				<figcaption>Bar “Lullaby” - Paris</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/hotel-first-arte-new-delhi.png" alt="Hotel First Arte - New Delhi">
-				<figcaption>Hotel First Arte - New Delhi</figcaption>
-			</figure>
+			
 		</div>
 	</section>
 	<section id="contact">
@@ -100,11 +89,21 @@
 </main>
 
 <footer>
+
+
 	<nav>
 		<ul>
 			<li>Mentions Légales</li>
 		</ul>
 	</nav>
 </footer>
+<aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-labelledby="titlemodal" style="display:none;">
+    <div class="modal-wrapper js-modal-stop">
+        <button class="js-modal-close">Fermer la modale</button>
+        <h2 id="titlemodal">Galerie photo</h2>
+        <input type="text"></input>
+	</div>
+</aside>	
 </body>
+
 </html>
